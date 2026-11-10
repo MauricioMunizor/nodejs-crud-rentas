@@ -1,0 +1,313 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+body {
+    background-color: #f5f7fb;
+    color: #343a40;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.titulo-pagina {
+    font-size: 26px;
+    font-weight: 700;
+    color: #212529;
+}
+
+.subtitulo-pagina {
+    color: #8a94a6;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   BOTÓN NUEVO USUARIO
+======================================== */
+
+.btn-nuevo {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.20);
+
+    transition: all 0.2s ease;
+}
+
+.btn-nuevo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(13, 110, 253, 0.25);
+}
+
+
+/* ========================================
+   CARD DE LA TABLA
+======================================== */
+
+.tabla-card {
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.04),
+        0 10px 30px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   HEADER DE LA TABLA
+======================================== */
+
+.tabla-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #edf0f4;
+
+    padding: 20px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tabla-header h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #252b33;
+}
+
+.tabla-header small {
+    color: #98a1b2;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   TABLA
+======================================== */
+
+.tabla-usuarios {
+    color: #495057;
+    vertical-align: middle;
+}
+
+
+/* Encabezado */
+
+.tabla-usuarios thead {
+    background-color: #f8f9fb;
+}
+
+.tabla-usuarios thead th {
+    border-bottom: 1px solid #e9edf2;
+    border-top: none;
+
+    padding: 14px 20px;
+
+    color: #7b8494;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+}
+
+
+/* Celdas */
+
+.tabla-usuarios tbody td {
+    padding: 17px 20px;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    font-size: 14px;
+}
+
+
+/* Última fila */
+
+.tabla-usuarios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+.tabla-usuarios tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.tabla-usuarios tbody tr:hover {
+    background-color: #fafbfc;
+}
+
+
+/* ========================================
+   ID
+======================================== */
+
+.id-usuario {
+    color: #8b95a5;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   NOMBRE
+======================================== */
+
+.usuario-nombre {
+    color: #252b33;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   DOMICILIO
+======================================== */
+
+.domicilio {
+    color: #687386;
+}
+
+.domicilio i {
+    color: #9ba5b4;
+}
+
+
+/* ========================================
+   TELEFONO
+======================================== */
+
+.telefono-icon {
+    color: #9ba5b4;
+}
+
+
+/* ========================================
+   RENTAS
+======================================== */
+
+.badge-rentas {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 32px;
+    height: 28px;
+
+    padding: 0 9px;
+
+    border-radius: 6px;
+
+    background-color: #eef4ff;
+    color: #1769e0;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   ACCIONES
+======================================== */
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+
+/* Botón individual */
+
+.accion {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Editar */
+
+.accion.editar {
+    background-color: #eef7ff;
+    color: #0d6efd;
+}
+
+.accion.editar:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+
+/* Eliminar */
+
+.accion.eliminar {
+    background-color: #fff1f1;
+    color: #dc3545;
+}
+
+.accion.eliminar:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+/* Rentas */
+
+.accion.rentas {
+    background-color: #fff8e6;
+    color: #d89b00;
+}
+
+.accion.rentas:hover {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .titulo-pagina {
+        font-size: 22px;
+    }
+
+    .tabla-header {
+        padding: 16px;
+    }
+
+    .tabla-usuarios tbody td {
+        padding: 14px 16px;
+    }
+
+    .btn-nuevo {
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+
+}

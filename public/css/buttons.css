@@ -1,0 +1,17 @@
+.boton-accion {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.boton-accion i {
+    font-size: 28px;
+}
+
+.boton-accion:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+}

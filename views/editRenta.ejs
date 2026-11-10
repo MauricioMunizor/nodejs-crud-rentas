@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+       SISTEMA CRUD DE USUARIOS
+    </a>
+  </div>
+</nav>
+<% if (renta) { %>
+<div class="container mt-4">
+
+    <div class="card border-secondary">
+        <div class="card-header">Editar Registro</div>
+
+        <div class="card-body">
+            <form action="/updateRenta" method="POST" onsubmit="return confirmar(event)">
+                <input type="hidden" id="id" name="id" value="<%= renta.id %>">
+<input type="hidden" id="usuario_id" name="usuario_id" value="<%= renta.usuario_id %>">
+
+                <div class="mb-3">
+                    <label for="fecha_renta" class="form-label">Fecha de renta</label>
+                    <input type="text" class="form-control" id="fecha_renta" name="fecha_renta" value="<%= renta.fecha_renta %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="fecha_evento" class="form-label">Fecha del evento</label>
+                    <input type="text" class="form-control" id="fecha_evento" name="fecha_evento" value="<%= renta.fecha_evento %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="hora_entrega" class="form-label">Hora de entrega</label>
+                    <input type="text" class="form-control" id="hora_entrega" name="hora_entrega" value="<%= renta.hora_entrega %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="hora_recogida" class="form-label">Hora de recoleccion</label>
+                    <input type="text" class="form-control" id="hora_recogida" name="hora_recogida" value="<%= renta.hora_recogida %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="direccion_evento" class="form-label">Direccion del evento</label>
+                    <input type="text" class="form-control" id="direccion_evento" name="direccion_evento" value="<%= renta.direccion_evento %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="total" class="form-label">Total</label>
+                    <input type="text" class="form-control" id="total" name="total" value="<%= renta.total %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="anticipo" class="form-label">Anticipo</label>
+                    <input type="text" class="form-control" id="anticipo" name="anticipo" value="<%= renta.anticipo %>" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="saldo" class="form-label">Saldo</label>
+                    <input type="text" class="form-control" id="saldo" name="saldo" value="<%= renta.saldo %>" tabindex="1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="renta" class="form-label">Estado</label>
+
+                    <select id="estado" name="estado" class="form-select" tabindex="2">
+                        <option value="completado"<%= renta.estado == 'Completado' || renta.estado == 'completado' ? 'selected' : '' %>>Completado</option>
+                        <option value="pendiente"<%= renta.estado == 'Pendiente' || renta.estado == 'pendiente' ? 'selected' : '' %>>Pendiente</option>
+                    </select>
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Guardar
+                </button>
+
+                <a
+                    href="/rentas/<%= renta.usuario_id %>"
+                    class="btn btn-secondary"
+                >
+                    Cancelar
+                </a>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+<% } %>
+    <script>
+function confirmar(event) {
+
+    event.preventDefault();
+
+    Swal.fire({
+        title: "¿Confirmas actualizar este registro?",
+        text: "Los cambios se guardarán en la base de datos.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, actualizar",
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            event.target.submit();
+
+        }
+
+    });
+
+    return false;
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
